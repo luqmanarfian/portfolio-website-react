@@ -21,6 +21,7 @@ function Kontak() {
                     <label htmlFor="pesan" className="font-semibold">Pesan</label>
                     <textarea name="Pesan" id="pesan" placeholder="Masukkan Pesan..." cols="45" rows="7" className="border border-zinc-500 p-2 rounded-md" required></textarea>
                 </div>
+                <input type="hidden" name="_url" value="https://luqmanarfian.online"></input>
                 <div className="text-center mt-6">
                     <button type="submit" className=" bg-violet-700 p-3 rounded-lg w-full cursor-pointer border border-zinc-600 hover:bg-violet-600 transition-all duration-300">Kirim Pesan</button>
                 </div>
