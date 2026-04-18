@@ -20,7 +20,7 @@ spec:
         {{- include "portfolio-website-react-chart.selectorLabels" . | nindent 8 }}
     spec:
       containers:
-        - name: {{ .Values.image.name }}
+        - name: {{ .Values.workloadName }}
           image: {{ .Values.image.name }}
           {{- with .Values.env }}
           env:
