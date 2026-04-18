@@ -4,7 +4,7 @@ pipeline {
     environment {
         APP_NAME = "portfolio-website-react"
         IMAGE_NAME = "luqmanarfian/portfolio-website-react"
-        IMAGE_TAG = "${BUILD_NUMBER}"
+        IMAGE_TAG = "${env.GIT_COMMIT}"
         BRANCH = "main"
     }
 
@@ -19,12 +19,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    def commit = env.GIT_COMMIT
-                    echo "Commit: ${commit}"
-
-                    sh """
-                    docker build -t ${IMAGE_NAME}:${commit} .
-                    """
+                    docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
                 }
             }
         }
