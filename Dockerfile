@@ -1,44 +1,27 @@
-# =========================================
-# Stage 1: Build the React.js Application
-# =========================================
+# build stage
+FROM node:lts-alpine AS build-stage
 
-# Use a lightweight Node.js image for building (customizable via ARG)
-FROM dhi.io/node:24-alpine3.22-dev AS builder
-
-# Set the working directory inside the container
+# make the 'app' folder the current working directory
 WORKDIR /app
 
-# Copy package-related files first to leverage Docker's caching mechanism
-COPY package.json package-lock.json* ./
+# copy both 'package.json' and 'package-lock.json' (if available)
+COPY package*.json ./
 
-# Install project dependencies using npm ci (ensures a clean, reproducible install)
-RUN --mount=type=cache,target=/root/.npm npm ci
+# install project dependencies
+RUN npm install
 
-# Copy the rest of the application source code into the container
+# copy project files and folders to the current working directory (i.e. 'app' folder)
 COPY . .
 
-# Build the React.js application (outputs to /app/dist)
+# build app for production with minification
 RUN npm run build
 
-# =========================================
-# Stage 2: Prepare Nginx to Serve Static Files
-# =========================================
+# production stage
+FROM nginx:1.22.1 AS production-stage
 
-FROM dhi.io/nginx:1.28.0-alpine3.21-dev AS runner
+RUN apt-get update && apt-get install -y nginx-extras
 
-# Copy custom Nginx config
 COPY nginx.conf /etc/nginx/nginx.conf
-
-# Copy the static build output from the build stage to Nginx's default HTML serving directory
-COPY --chown=nginx:nginx --from=builder /app/dist /usr/share/nginx/html
-
-# Use a non-root user for security best practices
-USER nginx
-
-# Expose port 8080 to allow HTTP traffic
-# Note: The default NGINX container now listens on port 8080 instead of 80 
+COPY --from=build-stage /app/dist /usr/share/nginx/html
 EXPOSE 8080
-
-# Start Nginx directly with custom config
-ENTRYPOINT ["nginx", "-c", "/etc/nginx/nginx.conf"]
-CMD ["-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
