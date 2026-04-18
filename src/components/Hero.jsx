@@ -10,7 +10,11 @@ function Hero() {
                     <q>Bayangan Tidak Akan Pernah Tertinggal.🌑</q>
                 </div>
                 <h1 className="md:text-5xl/tigh text-4xl/tight md:text-left text-center font-bold mb-6">Hi, Saya Luqman Arfian</h1>
-                <p className="md:text-xl/loose text-lg/loose mb-10 md:text-left text-center opacity-80">Membangun aplikasi web berperforma tinggi sekaligus mengotomatisasi infrastruktur di baliknya. Saya membantu tim meluncurkan produk dengan teknologi NestJS dan Vue.js, didukung oleh pipeline CI/CD yang efisien untuk mencapai zero-downtime deployment.</p>
+                <p className="md:text-xl/loose text-lg/loose mb-10 md:text-left text-center opacity-80">
+                    Saya membantu membangun dan mengelola sistem berbasis cloud yang stabil, scalable, dan siap production.
+                    Berfokus pada CI/CD, Kubernetes, dan automasi infrastruktur untuk memastikan aplikasi dapat berjalan secara efisien dan tanpa
+                    downtime.
+                </p>
                 <div className="flex items-center sm:gap-4 gap-2">
                     <a href="#" className="bg-violet-700 p-4 rounded-2xl hover:bg-violet-600 transition-all duration-300">
                         Download CV <i className="ri-download-cloud-line ml-2 ri-lg"></i>
