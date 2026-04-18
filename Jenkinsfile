@@ -12,7 +12,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/luqmanarfian/portfolio-website-react.git'
+                checkout scm
             }
         }
 
