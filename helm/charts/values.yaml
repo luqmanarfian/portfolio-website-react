@@ -3,7 +3,7 @@ replicaCount: 1
 workloadName: portfolio-website-react
 
 image:
-  name: portfolio-website-react-dev
+  name: luqmanarfian/portfolio-website-react
   pullPolicy: Always
 
 volumeMounts:
