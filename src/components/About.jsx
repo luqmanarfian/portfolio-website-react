@@ -7,14 +7,12 @@ function About() {
                 data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                 <img src={DataImage.HeroImage} alt="Image" className="w-12 rounded-md mb-10 sm:hidden" loading="lazy" />
                 <p className="text-base/loose mb-10">
-                    Saya adalah seorang DevOps Engineer yang juga memiliki ketertarikan dan
-                    pengalaman di bidang Web Development. Saya terbiasa bekerja dengan
-                    berbagai teknologi cloud, CI/CD, serta sistem backend untuk memastikan
-                    aplikasi dapat berjalan dengan baik, stabil, dan mudah dikembangkan.
-                    Selain itu, saya juga senang membangun aplikasi web sebagai bentuk eksplorasi
-                    dan pengembangan skill. Saat ini, saya sedang menjalani kuliah sambil bekerja,
-                    yang membuat saya terbiasa mengatur waktu, belajar secara mandiri, dan terus
-                    berkembang mengikuti kebutuhan industri teknologi.
+                    Saya adalah DevOps Engineer yang terbiasa membangun dan mengelola sistem berbasis cloud agar aplikasi dapat
+                    berjalan dengan stabil, scalable, dan efisien. Saya sering bekerja dengan CI/CD pipeline, Kubernetes, serta sistem
+                    asynchronous untuk mendukung performa aplikasi. Selain itu, saya juga memiliki pengalaman di Web Development,
+                    sehingga memahami proses pengembangan dari sisi aplikasi hingga infrastruktur. Saat ini saya menjalani kuliah sambil
+                    bekerja, yang membuat saya terbiasa belajar cepat, mengatur waktu dengan baik, dan terus berkembang mengikuti dunia
+                    teknologi.
                 </p>
                 <div className="flex items-center justify-between">
                     <img src={DataImage.HeroImage} alt="Image" className="w-12 rounded-md sm:block hidden" loading="lazy" />
@@ -34,7 +32,7 @@ function About() {
                     </div>
                 </div>
             </div>
-        </div>)
+        </div >)
 }
 
 export default About
