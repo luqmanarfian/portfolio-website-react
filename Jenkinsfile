@@ -12,7 +12,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: "${BRANCH}", url: 'https://github.com/luqmanarfian/portfolio-website-react.git'
+                git 'https://github.com/luqmanarfian/portfolio-website-react.git'
             }
         }
 
