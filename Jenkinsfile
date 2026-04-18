@@ -38,7 +38,7 @@ pipeline {
             steps {
                 sh """
                 helm upgrade --install ${APP_NAME} ./helm/charts \
-                --set image.tag=${IMAGE_TAG}
+                --set image.name=${IMAGE_NAME}:${IMAGE_TAG}
                 """
             }
         }
