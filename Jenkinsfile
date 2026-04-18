@@ -19,7 +19,12 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
+                    def commit = env.GIT_COMMIT
+                    echo "Commit: ${commit}"
+
+                    sh """
+                    docker build -t ${IMAGE_NAME}:${commit} .
+                    """
                 }
             }
         }
