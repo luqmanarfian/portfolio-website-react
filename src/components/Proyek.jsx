@@ -1,4 +1,4 @@
-import { listProyek } from '../data.js'
+import { listProyek } from '../data/appData.js'
 
 function Proyek() {
     return (

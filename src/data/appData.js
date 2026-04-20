@@ -1,7 +1,9 @@
-import HeroImage from "/assets/hero-img.webp";
+import HeroLuqmanImage from "/assets/hero-image-boy.webp";
+import HeroLancyImage from "/assets/hero-image-girl.webp";
 
 const DataImage = {
-  HeroImage,
+  HeroLuqmanImage,
+  HeroLancyImage,
 };
 
 export default DataImage;

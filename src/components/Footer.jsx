@@ -1,8 +1,10 @@
+import { usePersona } from "../features/persona/usePersona";
 
 function Footer() {
+    const { currentPersona } = usePersona();
     return (
         <div className="mt-32 py-4 flex md:flex-row flex-col justify-between items-center gap-6 md:gap-0">
-            <h1 className="text-center md:text-2xl text-lg font-bold">Luqman Arfian</h1>
+            <h1 className="text-center md:text-2xl text-lg font-bold">{currentPersona.name}</h1>
             <div className="flex gap-7">
                 <a href="#beranda" className="hover:text-violet-500 transition-all duration-300">Beranda</a>
                 <a href="#tentang" className="hover:text-violet-500 transition-all duration-300">Tentang</a>

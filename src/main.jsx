@@ -6,6 +6,7 @@ import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 import 'remixicon/fonts/remixicon.css'
 import 'animate.css';
+import { PersonaProvider } from './providers/PersonaProvider.jsx';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -14,10 +15,12 @@ AOS.init();
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <div className='container mx-auto px-4'>
-      <Navbar />
-      <App />
-      <Footer />
-    </div>
+    <PersonaProvider>
+      <div className='container mx-auto px-4'>
+        <Navbar />
+        <App />
+        <Footer />
+      </div>
+    </PersonaProvider>
   </StrictMode>,
 )

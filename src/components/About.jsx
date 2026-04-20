@@ -1,11 +1,13 @@
-import DataImage from '../data.js'
+import DataImage from '../data/appData.js'
+import { usePersona } from '../features/persona/usePersona.js'
 
 function About() {
+    const { currentPersona } = usePersona();
     return (
         <div className="tentang mt-20 py-10" id="tentang">
             <div className="xl:w-2/3 lg:w-4/5 w-full mx-auto p-7 bg-zinc-800 rounded-lg "
                 data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-                <img src={DataImage.HeroImage} alt="Image" className="w-12 rounded-md mb-10 sm:hidden" loading="lazy" />
+                <img src={DataImage[currentPersona.heroImage]} alt="Image" className="w-12 rounded-md mb-10 sm:hidden" loading="lazy" />
                 <p className="text-base/loose mb-10">
                     Saya adalah seorang DevOps Engineer yang juga memiliki ketertarikan dan
                     pengalaman di bidang Web Development. Saya terbiasa bekerja dengan
@@ -17,7 +19,7 @@ function About() {
                     berkembang mengikuti kebutuhan industri teknologi.
                 </p>
                 <div className="flex items-center justify-between">
-                    <img src={DataImage.HeroImage} alt="Image" className="w-12 rounded-md sm:block hidden" loading="lazy" />
+                    <img src={DataImage[currentPersona.heroImage]} alt="Image" className="w-12 rounded-md sm:block hidden" loading="lazy" />
                     <div className="flex gap-10 items-center  ">
                         {/* <div>
                             <h1 className="text-4xl mb-1">
