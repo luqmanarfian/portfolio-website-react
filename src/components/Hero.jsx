@@ -6,7 +6,7 @@ function Hero() {
     const { currentPersona } = usePersona();
     return (
         <div className="hero grid md:grid-cols-2 justify-center items-center pt-5 xl:gap-20 gap-10 grid-cols-1">
-            <div className="animate__animated animate__fadeInUp">
+            <div className="animate__animated animate__fadeInUp animate__delay-1s">
                 <div className="flex items-center gap-3 mb-6 bg-zinc-800 w-fit p-4 rounded-2xl">
                     <img src={DataImage[currentPersona.heroImage]} alt="Hero Image" className="w-10 rounded-md" loading="lazy" />
                     <q>Bayangan Tidak Akan Pernah Tertinggal.🌑</q>
@@ -27,7 +27,7 @@ function Hero() {
                 </div>
             </div>
             <div className="flex justify-center items-center overflow-hidden">
-                <img src={DataImage[currentPersona.heroImage]} alt="Hero Image" className="w-[550px] rounded-3xl md:ml-auto animate__animated animate__fadeInRight" loading="lazy" />
+                <img src={DataImage[currentPersona.heroImage]} alt="Hero Image" className="w-[550px] rounded-3xl md:ml-auto animate__animated animate__fadeInRight animate__delay-1s" loading="lazy" />
             </div>
         </div>
     )
