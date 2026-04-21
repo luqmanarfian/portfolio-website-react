@@ -9,16 +9,16 @@ export const PersonaProvider = ({ children }) => {
         setPersona(prev => (prev === "luqman" ? "lancy" : "luqman"));
     };
 
-    const currentPersona = personaData[persona];
+    const currentPersona = personaData[persona] || personaData.luqman;
+
+    const value = {
+        persona,
+        currentPersona,
+        togglePersona
+    };
 
     return (
-        <PersonaContext.Provider
-            value={{
-                persona,
-                currentPersona,
-                togglePersona
-            }}
-        >
+        <PersonaContext.Provider value={value}>
             {children}
         </PersonaContext.Provider>
     );

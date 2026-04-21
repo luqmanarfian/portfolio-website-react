@@ -5,8 +5,3 @@
         font-family: 'Poppins', sans-serif;
     }
 }
-
-
-.hero {
-    will-change: transform, opacity;
-}

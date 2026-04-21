@@ -3,10 +3,7 @@ import { usePersona } from "../features/persona/usePersona";
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false)
-    const { persona, togglePersona } = usePersona();
-    const { currentPersona } = usePersona();
-
-
+    const { currentPersona, togglePersona } = usePersona();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,10 +22,10 @@ const Navbar = () => {
 
     return (
         <div className="navbar py-7 flex items-center justify-between">
-            <div className="logo flex items-center gap-1">
-                <h1 className="text-3xl font-bold">{currentPersona.name}</h1>
+            <div className="logo flex items-center lg:gap-2 gap-1">
+                <h1 className="lg:text-3xl text-2xl font-bold">{currentPersona.name}</h1>
                 <button onClick={togglePersona} className="cursor-pointer p-2 rounded-full hover:bg-violet-500/40 transition-all duration-300 animate__animated animate__rotateIn ">
-                    <i className="ri-exchange-line text-3xl text-violet-500 "></i>
+                    <i className="ri-exchange-line lg:text-3xl text-2xl text-violet-500 "></i>
                 </button>
             </div>
             <ul className={`menu flex items-center sm:gap-10 gap-4 md:static fixed left-1/2  -translate-x-1/2 z-50
