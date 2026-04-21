@@ -6,7 +6,7 @@ function About() {
     return (
         <div className="tentang mt-28 py-10" id="tentang">
             <div className="xl:w-2/3 lg:w-4/5 w-full mx-auto p-7 bg-zinc-800 rounded-lg "
-                data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+                data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" data-aos-delay="1200" >
                 <img src={DataImage[currentPersona.heroImage]} alt="Image" className="w-12 rounded-md mb-10 sm:hidden" loading="lazy" />
                 <p className="text-base/loose mb-10">
                     Saya adalah seorang DevOps Engineer yang juga memiliki ketertarikan dan
