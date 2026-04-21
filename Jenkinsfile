@@ -6,6 +6,7 @@ pipeline {
         IMAGE_NAME = "luqmanarfian/portfolio-website-react"
         IMAGE_TAG = "${env.GIT_COMMIT}"
         BRANCH = "main"
+        SONARQUBE_SERVER = "sonarqube-server"
     }
 
     stages {
